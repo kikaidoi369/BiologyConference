@@ -35,18 +35,18 @@
     
     
     
-        <div class="container" style="background-color: black">
+        <div class="container">
             <center>
-                <p id="demo" style="color: whitesmoke;font-size: 48px"></p>
+                <p id="countdown" style="color:dimgray ;font-size: 64px;padding-top:30px;padding-bottom: 30px"></p>
             </center>
         </div>
-        <div class="container" style="background-color:azure;height:200px">
+        <div class="container" style="background-color:darkgray;height:200px">
             
         </div>
     
         <script>
             // Set the date we're counting down to
-            var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+            var countDownDate = new Date("May 10, 2018 23:59:59").getTime();
 
             // Update the count down every 1 second
             var x = setInterval(function() {
@@ -63,14 +63,14 @@
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Output the result in an element with id="demo"
-                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                // Output the result in an element with id="countdown"
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
                 + minutes + "m " + seconds + "s ";
 
                 // If the count down is over, write some text 
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById("demo").innerHTML = "EXPIRED";
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
                 }
             }, 1000);
             </script>

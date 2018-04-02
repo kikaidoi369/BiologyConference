@@ -1086,7 +1086,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: ;
 }
 input,
 button,
@@ -1589,25 +1589,43 @@ pre code {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 760px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 900px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1100px;
   }
 }
 .container-fluid {
-  padding-right: 10%;
-  padding-left: 10%;
   margin-right: auto;
   margin-left: auto;
+  background-color: #008080;
 }
+@media (min-width:768px) {
+    .container-fluid{
+        padding-right: 5%;
+        padding-left: 5%;
+    } 
+}
+@media (min-width:992px){
+    .container-fluid{
+        padding-right: 7%;
+        padding-left: 7%;
+    }
+}
+@media (min-width:1200px){
+    .container-fluid{
+        padding-right: 18%;
+        padding-left: 18%;
+    } 
+}
+
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -4276,8 +4294,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
   height: 50px;
   padding: 15px 15px;
-  font-size: 18px;
+  font-size: 23px;
   line-height: 20px;
+  color: red;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4501,7 +4520,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
-  color: #777;
+  color: antiquewhite;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -4512,7 +4531,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  color: antiquewhite;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -4524,6 +4543,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
   background-color: #e7e7e7;
+  font-size:  16px;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -6760,3 +6780,4 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
