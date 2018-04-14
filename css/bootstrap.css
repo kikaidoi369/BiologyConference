@@ -4521,6 +4521,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-brand {
   color: antiquewhite;
+  font-size: 31px
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -6781,3 +6782,10 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
+
+
+.body-container{
+  height: auto;
+  border: 1px black solid;
+  border-radius: 5px;
+}
