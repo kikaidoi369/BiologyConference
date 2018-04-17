@@ -8,35 +8,11 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script>
         $(function(){
-            $("#header").load("header.html");
-        });
-    </script>
-</head>
-<body>
-
-        <div id="header"></div>
-            
-    
-    
-        <div class="container">
-            <h1>Header 1</h1>
-            <hr>
-            <h2>Header 2</h2>
-            <h3>Header 3</h3>
-            <h4>Header 4</h4>
-            <h5>Header 5</h5>
-            <h6>Header 6</h6>
-
-
-        </div>
-    
-        <footer style="background-color:#008080;position:relative;bottom:0;right: 0;left: 0;padding: 1rem;width: 100%;color: white;text-align: center;margin-top: 10px">
-
-            <h3>Test footer</h3>
-        </footer>
-        
-        <!--JS for Countdown -->
-        <script>
+            $("#header").load("header/header.html");
+            $("#footer").load("header/footer.html");
+        });</script>
+                <!--JS for Countdown -->
+    <script>
             // Set the date we're counting down to
             var countDownDate = new Date("May 13, 2018 23:59:59").getTime();
 
@@ -67,6 +43,35 @@
                     document.getElementById("countdown").innerHTML = "EXPIRED";
                 }
             }, 1000);
-            </script>
+    </script>
+</head>
+<body>
+
+        <div id="header"></div>
+
+        <div class="container">
+            <div style="margin: 40px 25px">
+                <h2>2018 International Conference on Biology</h2>
+                <h3>Information</h3>
+                <hr style="border: 0.3px solid #c3c0c0fa;margin-top:10px">
+                <p>
+                    International Symposium on Business and Social Sciences (ISBSS) is an international platform for scholars, researchers and practitioners to discuss interdisciplinary research and practices in the fields of Business, Economics, Finance, Management, Communication, Society, Education, Culture, Politics, Law and Psychology.
+                </p>
+                <p>
+                    2018 ISBSS will take place from August 28-30, 2018 in Singapore. Prospective authors are invited to submit original research abstracts or full papers which were not, are not and have not been submitted/published/under consideration in other conferences and journals.
+                </p>
+            </div>
+            <div style="margin: 40px 25px">
+                <h3>Topic</h3>
+                <hr style="border: 0.9px solid #c3c0c0fa;margin-top:20px">
+                <p>
+                    2018 ISBSS will take place from August 28-30, 2018 in Singapore. Prospective authors are invited to submit original research abstracts or full papers which were not, are not and have not been submitted/published/under consideration in other conferences and journals.
+                </p>
+            </div>
+        </div>
+    
+        <div id="footer"></div>
+        
+
 </body>
 </html>
