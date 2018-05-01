@@ -5,8 +5,8 @@
     <title>Biology Conference</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
         $(function(){
             $("#header").load("header/header.html");
@@ -63,13 +63,64 @@
                     2018 ISBSS will take place from August 28-30, 2018 in Singapore. Prospective authors are invited to submit original research abstracts or full papers which were not, are not and have not been submitted/published/under consideration in other conferences and journals.
                 </p>
             </div>
-            <div style="margin: 40px 25px">
-                <h3>Topic</h3>
+            <div style="margin: 40px 25px;border: transparent;">
+                <h3 align="center">Plenary Speakers</h3>
                 <hr style="border: 0.9px solid #c3c0c0fa;margin-top:20px">
-                <p>
-                    2018 ISBSS will take place from August 28-30, 2018 in Singapore. Prospective authors are invited to submit original research abstracts or full papers which were not, are not and have not been submitted/published/under consideration in other conferences and journals.
-                </p>
+
+                  <div align="center"  style="border:1px solid #e1e1e1;display: inline-block;">
+                      <img src="image/person.jpg" type="button" data-toggle="modal" data-target="#myModal1">
+                      <h4>Steven Roger</h4>
+                  </div>
+                  <div align="center"  style="border:1px solid #e1e1e1;display: inline-block;">
+                      <img src="image/person.jpg" type="button" data-toggle="modal" data-target="#myModal2">
+                      <h4>Name Na</h4>
+                  </div>
+
+                <!-- Modal Expansion 1 -->
+                  <div class="modal fade" id="myModal1" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Steven Roger</h4>
+                        </div>
+                        <div class="modal-body">
+                          <img src="image/person.jpg">
+                          <p>Some text in the modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+
+                  <div class="modal fade" id="myModal2" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Name Na</h4>
+                        </div>
+                        <div class="modal-body">
+                          <img src="image/person.jpg">
+                          <p>Some text in the modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+
+
+
+
+
             </div>
+
         </div>
     
         <div id="footer"></div>
