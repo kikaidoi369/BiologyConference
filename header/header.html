@@ -9,7 +9,7 @@
 
         /* Full-width inputs */
         input[type=text], input[type=password] {
-            width: 100%;
+            width: 80%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
@@ -151,7 +151,7 @@
                     <ul class="nav navbar-nav" style="float:right">
                         <li><button  onclick="document.getElementById('login').style.display='block'"  style="margin: 10px 12px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #00c9ff;color: white;font-weight: bold">Login</button></li>
 
-                        <li><button style="margin: 10px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #f2ae33;color: white;font-weight: bold">Registration</button></li>
+                        <li><button  onclick="document.getElementById('register').style.display='block'" style="margin: 10px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #f2ae33;color: white;font-weight: bold">Registration</button></li>
                     </ul>	
                 </div>
             </nav>
@@ -227,6 +227,29 @@
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
       <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<div id="register" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('register').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <h2>Register</h2>
+    </div>
+
+    <div class="container">
+
+
+
+
+      <button type="submit">Register</button>
+
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('register').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
 </div>
