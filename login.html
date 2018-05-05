@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard</title>
-
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script>
         $(function(){
             $("#header").load("header/header.html");
             $("#footer").load("header/footer.html");
         });</script>
-
                 <!--JS for Countdown -->
     <script>
             // Set the date we're counting down to
@@ -44,49 +41,50 @@
                     clearInterval(x);
                     document.getElementById("countdown").innerHTML = "EXPIRED";
                 }
-            }, 1000);
-    </script>
-
-    <style>
-    	.container .dashboard{
-    		
-    	}
-    </style>
+            }, 1000);</script>
 </head>
 <body>
-
-	<div id="header"></div>
-
-	<div class="container">
-        <div class="col-sm-3">
-            <div class="sidenav">
-                <a href="#">General</a>
-                <a href="#">Abstract</a>
-                <a href="#">Status</a>
-            </div>
+  <div id="login" class="container">
+    
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <img src="image/web.jpg" class="img-circle" style="width: 100%">
+        <div class="text-center">
+          <h2>Login</h2>
         </div>
-        <div class="col-sm-9">
-            <h2>General</h2>
-            <hr>
-            
-        </div>
-	</div>
+      </div>
+    </div>
+    
+    <div class="col-md-offset-2">
+      <div class="row" >
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+      </div>
 
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"> 
-<input type="hidden" name="cmd" value="_xclick"> 
-<input type="hidden" name="business" value="phonkornkrit@gmail.com"> 
-<input type="hidden" name="lc" value="US"> 
-<input type="hidden" name="item_name" value="Coffee red bean"> 
-<input type="hidden" name="amount" value="10.00"> 
-<input type="hidden" name="currency_code" value="THB"> 
-<input type="hidden" name="button_subtype" value="services"> 
-<input type="hidden" name="no_note" value="0"> 
-<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest"> 
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"> 
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> 
-</form>
+      <div class="row">
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+      </div>
 
-	<div id="footer"></div>
+      <div class="row">
+        <button type="submit">Login</button>
+        <span class="col-md-offset-1">
+          <button type="button" class="cancelbtn">Cancel</button>
+        </span>
+      </div>
+
+      <div class="psw">Forgot <a href="#">password?</a></div>
+
+      <div class="row">
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+    </div>
+    
+</div>
+
+  <div id="footer"></div>
 
 </body>
 </html>
