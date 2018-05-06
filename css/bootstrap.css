@@ -6788,27 +6788,37 @@ button.close {
 
 /* The sidebar menu */
 .sidenav {
-    width: 160px; /* Set the width of the sidebar */
+    width: 90%; /* Set the width of the sidebar */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #eee; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
+    margin: 5px 5px;
     margin-top: 20px;
 }
 
 /* The navigation menu links */
 .sidenav a {
-    padding: 6px 8px 6px 16px;
+    padding: 6px 16px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 20px;
+    color: #fff;
     display: block;
+    background-color: #85b8e4;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.sidenav a.active {
+    color: #fff;
+    background-color: #ed9f3a;
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
+.sidenav a:hover{
+    color: #fff;
+    background-color: #ed9f3a;
 }
 
 /* Style page content */
