@@ -4,6 +4,7 @@
 	<title>Dashboard</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dosis">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -47,11 +48,32 @@
             }, 1000);
     </script>
 
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dosis">
+
 
     <script>
-        function myFunction() {
-            document.getElementById("fname").disabled = false;
+        function editProfile() {
+            var status = document.getElementById("edit-button").firstChild.data;
+            var ids = ["fname","mname","lname","degree","ucountry","address","phone-number","institution","unit","department","icountry"];
+
+            if (status=="EDIT") {
+                for (var i = ids.length - 1; i >= 0; i--) {
+                    document.getElementById(ids[i]).disabled = false;
+                    document.getElementById("edit-button").firstChild.data = "SAVE";
+                }
+                document.getElementById("submit-button").style.display = 'block';
+                document.getElementById("edit-button").style.backgroundColor = "#e04d4d";
+            }
+            else if (status=="SAVE"){
+                for (var i = ids.length - 1; i >= 0; i--) {
+                    document.getElementById(ids[i]).disabled = true;
+                    document.getElementById("edit-button").disabled = true;
+                    document.getElementById("edit-button").style.backgroundColor = "#ccc";
+                    document.getElementById("submit-button").style.backgroundColor = "#4fbd5c";
+                }
+            }
+            else{
+                console.log("error");
+            }
         }
     </script>
 
@@ -76,10 +98,11 @@
 	<div id="header"></div>
 
 	<div class="container" style="padding: 0px">
+
         <div class="col-sm-3" style="padding: 0px">
             <center>
                 <div class="sidenav" style="background-color: white">
-                <a class="active" href="#">General</a>
+                <a class="active" href="dashboard.html">General</a>
                 <a href="#">Abstract</a>
                 <a href="#">Status</a>
             </div>
@@ -89,11 +112,16 @@
             <div style="border-left: 1px solid #938a8a;margin-left: 8px;padding-left: 20px">
                 <h2 style="font-family: Dosis, serif;margin-bottom: 20px;font-weight: 20px;font-weight: bold">GENERAL</h2>
                 <hr>
+                <div>
+                    <button id="edit-button" onclick="editProfile()" style="background-color:#f2ae33;font-weight: bold">EDIT</button>
+                    <button id="submit-button" style="display: none;background-color: #ccc;font-weight: bold">SUBMIT</button>
+                </div>
                 <div class="profile">
+                    
                     <table>
                         <tr>
                             <th colspan="2">
-                                <h3 style="font-family: Dosis, serif;margin-bottom: 20px;font-weight: 20px;font-weight: bold">
+                                <h3 style="margin-bottom: 20px;font-weight: 20px;font-weight: bold">
                                     User
                                 </h3>
                             </th>
@@ -108,7 +136,7 @@
                         </tr>
                         <tr>
                             <th colspan="2">
-                                <h3 style="font-family: Dosis, serif;margin-bottom: 20px;font-weight: 20px;font-weight: bold">
+                                <h3 style="margin-bottom: 20px;font-weight: 20px;font-weight: bold">
                                     Profile
                                 </h3>
                             </th>
@@ -171,7 +199,7 @@
                         </tr>
                         <tr>
                             <th colspan="2">
-                                <h3 style="font-family: Dosis, serif;margin-bottom: 20px;font-weight: 20px;font-weight: bold">
+                                <h3 style="margin-bottom: 20px;font-weight: 20px;font-weight: bold">
                                     Institution
                                 </h3>
                             </th>
@@ -209,28 +237,14 @@
                             </td>
                         </tr>
                     </table>
-                    
-                    <button onclick="myFunction()">Disable Text field</button>
+                  
                 </div>
+                
 
             </div>
             
         </div>
 	</div>
-
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"> 
-<input type="hidden" name="cmd" value="_xclick"> 
-<input type="hidden" name="business" value="phonkornkrit@gmail.com"> 
-<input type="hidden" name="lc" value="US"> 
-<input type="hidden" name="item_name" value="Coffee red bean"> 
-<input type="hidden" name="amount" value="10.00"> 
-<input type="hidden" name="currency_code" value="THB"> 
-<input type="hidden" name="button_subtype" value="services"> 
-<input type="hidden" name="no_note" value="0"> 
-<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest"> 
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"> 
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> 
-</form>
 
 	<div id="footer"></div>
 
