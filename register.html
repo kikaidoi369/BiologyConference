@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("header/header.html");
+            $("#footer").load("header/footer.html");
+        });</script>
+                <!--JS for Countdown -->
+    <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("May 13, 2018 23:59:59").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now an the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="countdown"
+                document.getElementById("countDays").innerHTML = days;
+                document.getElementById("countHours").innerHTML = hours;
+                document.getElementById("countMinutes").innerHTML = minutes;
+                document.getElementById("countSeconds").innerHTML = seconds;
+                
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                }
+            }, 1000);</script>
+</head>
+<body>
+
+<div id="register" class="container">
+  
+    <div>
+      <h2>Register</h2>
+    </div>
+
+    <div class="row">
+      <div class="row" >
+        <label for="id"><b>ID</b></label>
+        <input type="text" placeholder="Enter ID" name="id" required>
+      </div>
+
+      <div class="row" >
+        <label for="password"><b>Password</b></label>
+        <input type="text" placeholder="Enter Password" name="password" required>
+      </div>
+
+      <div class="row">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Title
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Mr.</a></li>
+            <li><a href="#">Miss</a></li>
+            <li><a href="#">Mrs</a></li>
+            <li><a href="#">Dr.</a></li>
+            <li><a href="#">Prof.</a></li>
+            <li><a href="#">Other</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row" >
+          <label for="first_name"><b>First Name</b></label>
+          <input type="text" placeholder="Enter First Name" name="first_name" required>
+      </div>
+
+      <div class="row" >
+          <label for="middle"><b>Middle Name</b></label>
+          <input type="text" placeholder="Enter Middle Name" name="middle_name" required>
+      </div>
+
+      <div class="row" >
+          <label for="last_name"><b>Last Name</b></label>
+          <input type="text" placeholder="Enter Last Name" name="last_name" required>
+      </div>
+
+      <div class="row">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Title
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Mr.</a></li>
+            <li><a href="#">Miss</a></li>
+            <li><a href="#">Mrs</a></li>
+            <li><a href="#">Dr.</a></li>
+            <li><a href="#">Prof.</a></li>
+            <li><a href="#">Other</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row" >
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+      </div>
+
+      <div class="row" >
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+      </div>
+
+
+
+    </div>
+
+    <div class="row">
+      <button type="submit">Register</button>
+      <span class="col-md-offset-1">
+          <button type="button" class="cancelbtn">Cancel</button>
+        </span>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+</body>
+</html>
