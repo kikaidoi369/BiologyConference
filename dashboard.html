@@ -45,10 +45,7 @@
                     clearInterval(x);
                     document.getElementById("countdown").innerHTML = "EXPIRED";
                 }
-            }, 1000);
-    </script>
-
-
+            }, 1000);    </script>
 
     <script>
         function editProfile() {
@@ -74,6 +71,26 @@
             else{
                 console.log("error");
             }
+        }</script>
+    <script>
+        function validateField(){
+            var ids = ["fname","mname","lname","degree","ucountry","address","phone-number","institution","unit","department","icountry"];
+            var fname       = document.getElementById("fname");
+            var mname       = document.getElementById("mname");
+            var lname       = document.getElementById("lname");
+            var degree      = document.getElementById("degree");
+            var ucountry    = document.getElementById("ucountry");
+            var address     = document.getElementById("address");
+            var phone_number= document.getElementById("phone-number");
+            var institution = document.getElementById("institution");
+            var unit        = document.getElementById("unit");
+            var department  = document.getElementById("department");
+            var icountry    = document.getElementById("icountry");
+
+            if (fname =="") {
+
+            }
+
         }
     </script>
 
@@ -90,8 +107,8 @@
         .profile td:nth-child(2){
             width: 30%;
         }
-
     </style>
+
 </head>
 <body>
 
@@ -112,10 +129,7 @@
             <div style="border-left: 1px solid #938a8a;margin-left: 8px;padding-left: 20px">
                 <h2 style="font-family: Dosis, serif;margin-bottom: 20px;font-weight: 20px;font-weight: bold">GENERAL</h2>
                 <hr>
-                <div>
-                    <button id="edit-button" onclick="editProfile()" style="background-color:#f2ae33;font-weight: bold">EDIT</button>
-                    <button id="submit-button" style="display: none;background-color: #ccc;font-weight: bold">SUBMIT</button>
-                </div>
+                
                 <div class="profile">
                     
                     <table>
@@ -131,7 +145,7 @@
                                 <label for="email"><b>Email</b></label>
                             </td>
                             <td>
-                                <input id="email" type="text" value="phonkornkrit@gmail.com" disabled="">
+                                <input id="email" type="text" value="phonkornkrit@gmail.com" disabled="" required="">
                             </td>
                         </tr>
                         <tr>
@@ -146,7 +160,7 @@
                                 <label for="fname"><b>First name</b></label>
                             </td>
                             <td>
-                                <input id="fname" type="text" disabled="">
+                                <input id="fname" type="text" pattern=".{1,5}" disabled="" required="" title="Please input First name 1-5 characters">
                             </td>
                         </tr>
                         <tr>
@@ -162,7 +176,7 @@
                                 <label for="lname"><b>Last name</b></label>
                             </td>
                             <td>
-                                <input id="lname" type="text" disabled="">
+                                <input id="lname" type="text" disabled="" required="">
                             </td>
                         </tr>
                         <tr>
@@ -170,7 +184,7 @@
                                 <label for="degree"><b>Degree</b></label>
                             </td>
                             <td>
-                                <input id="degree" type="text" disabled="">
+                                <input id="degree" type="text" disabled="" required="">
                             </td>
                         </tr>
                         <tr>
@@ -178,7 +192,7 @@
                                 <label for="ucountry"><b>Country</b></label>
                             </td>
                             <td>
-                                <input id="ucountry" type="text" disabled="">
+                                <input id="ucountry" type="text" disabled="" required="">
                             </td>
                         </tr>
                         <tr>
@@ -186,7 +200,7 @@
                                 <label for="address"><b>Address</b></label>
                             </td>
                             <td>
-                                <input id="address" type="text" disabled="">
+                                <input id="address" type="text" disabled="" required="">
                             </td>
                         </tr>
                         <tr>
@@ -194,7 +208,7 @@
                                 <label for="phone-number"><b>Phone Number</b></label>
                             </td>
                             <td>
-                                <input id="phone-number" type="text" disabled="">
+                                <input id="phone-number" type="text" disabled="" required="">
                             </td>
                         </tr>
                         <tr>
@@ -209,7 +223,7 @@
                                 <label for="institution"><b>Institution</b></label>
                             </td>
                             <td>
-                                <input id="institution" type="text" disabled="">
+                                <input id="institution" type="text" disabled="" required="">
                             </td>
                         </tr>
                         <tr>
@@ -217,7 +231,7 @@
                                 <label for="unit"><b>Unit</b></label>
                             </td>
                             <td>
-                                <input id="unit" type="text" disabled="">
+                                <input id="unit" type="text" disabled="" required="">
                             </td>
                         </tr>
                         <tr>
@@ -225,7 +239,7 @@
                                 <label for="department"><b>Department</b></label>
                             </td>
                             <td>
-                                <input id="department" type="text" disabled="">
+                                <input id="department" type="text" disabled="" required="">
                             </td>
                         </tr>
                         <tr>
@@ -233,13 +247,16 @@
                                 <label for="icountry"><b>Institution Country</b></label>
                             </td>
                             <td>
-                                <input id="icountry" type="text" disabled="">
+                                <input id="icountry" type="text" disabled="" required="">
                             </td>
                         </tr>
                     </table>
                   
                 </div>
-                
+                <div>
+                    <button id="edit-button" onclick="editProfile()" style="background-color:#f2ae33;font-weight: bold">EDIT</button>
+                    <button id="submit-button" onclick="validateField()" style="display: none;background-color: #ccc;font-weight: bold">SUBMIT</button>
+                </div>
 
             </div>
             
