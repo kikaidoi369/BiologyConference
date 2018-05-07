@@ -12,7 +12,8 @@
         $(function(){
             $("#header").load("header/header.html");
             $("#footer").load("header/footer.html");
-        });</script>
+        });
+    </script>
 
                 <!--JS for Countdown -->
     <script>
@@ -87,9 +88,13 @@
             var department  = document.getElementById("department");
             var icountry    = document.getElementById("icountry");
 
-            if (fname =="") {
-
+            if (!fname.checkValidity()) {
+                document.getElementById("fname-alert").innerHTML = fname.title;
+                fname.style.borderColor = "red";
+                console.log("This is invalid");
             }
+
+            console.log(fname.title);
 
         }
     </script>
@@ -120,8 +125,10 @@
             <center>
                 <div class="sidenav" style="background-color: white">
                 <a class="active" href="dashboard.html">General</a>
-                <a href="#">Abstract</a>
                 <a href="#">Status</a>
+                <a href="dashboard_payment.html">Payment</a>
+                <a href="#">Abstract</a>
+                <a href="#">Plan</a>
             </div>
             </center>
         </div>
@@ -160,7 +167,8 @@
                                 <label for="fname"><b>First name</b></label>
                             </td>
                             <td>
-                                <input id="fname" type="text" pattern=".{1,5}" disabled="" required="" title="Please input First name 1-5 characters">
+                                <input id="fname" type="text" disabled="" required="">
+                                <p id="fname-alert"></p>
                             </td>
                         </tr>
                         <tr>
