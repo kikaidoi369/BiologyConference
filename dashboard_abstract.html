@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard Payment</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dosis">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#header").load("header/header.html");
+            $("#footer").load("header/footer.html");
+        });</script>
+
+                <!--JS for Countdown -->
+    <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("May 13, 2018 23:59:59").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now an the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="countdown"
+                document.getElementById("countDays").innerHTML = days;
+                document.getElementById("countHours").innerHTML = hours;
+                document.getElementById("countMinutes").innerHTML = minutes;
+                document.getElementById("countSeconds").innerHTML = seconds;
+                
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                }
+            }, 1000);    </script>
+
+    <style>
+
+        .payment{
+            margin: 40px 30px;
+            width: 90%;
+        }
+
+        table.payment td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            width: 25%;
+            text-align: center;
+        }
+        table.payment th {
+            text-align:center;
+            background-color: #9ad4de;
+            color: #504531;
+        }
+        table.payment td:nth-child(1) {
+            width: 20%;
+        }
+        table.payment td:nth-child(2){
+            width: 20%
+        }
+        table.payment td:nth-child(3){
+            width: 20%;
+        }
+    </style>
+
+    <script>
+        function uploadFile(){
+            var file    =   document.getElementById("uploadFile");
+            var text    =   ""
+            if ('files' in x) {
+                if (file.files.length ==0) {
+                    text = "Please select your abstract file";
+                }
+                else if{
+                    
+                }
+                else{
+
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+
+	<div id="header"></div>
+
+	<div class="container" style="padding: 0px">
+
+        <div class="col-sm-3" style="padding: 0px">
+            <center>
+                <div class="sidenav" style="background-color: white">
+                <a href="dashboard.html">General</a>
+                <a href="dashboard_status.html">Status</a>
+                <a href="dashboard_payment.html">Payment</a>
+                <a class="active" href="dashboard_abstract.html">Abstract</a>
+                <a href="#">Plan</a>
+            </div>
+            </center>
+        </div>
+        <div class="col-sm-9" style="padding-left: 5px">
+            <div style="border-left: 1px solid #938a8a;margin-left: 8px;padding-left: 20px">
+                <h2 style="font-family: Dosis, serif;margin-bottom: 20px;font-weight: 20px;font-weight: bold">Status</h2>
+                <hr>
+                <p>Please update your abstract</p>
+                <input type="file" id="uploadFile" onchange="uploadFile()" title="">
+                <p id="demo"></p>
+
+
+            </div>
+            
+        </div>
+	</div>
+
+	<div id="footer"></div>
+
+</body>
+</html>
