@@ -12,6 +12,7 @@
         });</script>
                 <!--JS for Countdown -->
     <script>
+
             // Set the date we're counting down to
             var countDownDate = new Date("May 13, 2018 23:59:59").getTime();
 
@@ -42,6 +43,17 @@
                     document.getElementById("countdown").innerHTML = "EXPIRED";
                 }
             }, 1000);</script>
+
+  <style>
+        .red{
+          color: red;
+        }
+        .car-mid{
+          float: right;
+          margin-top: 7.5px;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -49,22 +61,12 @@
 
 <div id="register" class="container">
 
-    <form class="form-horizontal">
+    <form class="form-horizontal" style="border:0">
 
       <div class="form-group">
         <div class="col-sm-3 col-sm-offset-3">
           <h2>Register</h2>
         </div>
-      </div>
-      
-      <div class="form-group"> 
-
-        <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="id" style="margin: 8px 0">ID</label> 
-        </div>
-        <div class="col-sm-3"> 
-          <input size="5" type="text" class="form-control" placeholder="Enter ID" name="id">
-        </div> 
       </div>
 
       <div class="form-group">
@@ -73,18 +75,16 @@
           <label for="E-mail" style="margin: 8px 0">E-mail</label> 
         </div>
         <div class="col-sm-6"> 
-          <input size= "30" type="text" class="form-control" onchange="testEmail(Email.value);" placeholder="Enter E-mail" type="email" name="E-mail" id="E-mail">
-          <script type="text/javascript">            
-            function testEmail(str){
-              var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
-              if(reg.test(str)){
-              }else{
-                confirm("Please enter the correct Email");
-                document.getElementById("Email").value = "";
-              }
-            }
-          </script>
+          <input size= "30" type="text" class="form-control" onkeyup="checkEmailText()" onchange="validateEmail(Email.value)" placeholder="Enter E-mail" type="unique" name="email" id="email">
+          
         </div> 
+        <div class="">
+          <div class="col-sm-offset-3 col-sm-6 registrationFormAlert red" id="divCheckEmailText"></div>
+          <script type="text/javascript" src="js/register.js">
+            checkEmailText();
+            // validateEmail(email);
+          </script>
+        </div>
 
       </div>
 
@@ -94,9 +94,36 @@
           <label for="password" style="margin: 8px 0">Password</label> 
         </div>
         <div class="col-sm-6"> 
-          <input size="20" type="text" class="form-control" placeholder="Enter Password" name="password" id="password">
+          <input size="20" type="password" class="form-control" onkeyup="checkPassword()" placeholder="Enter Password" name="password" id="password">
         </div>
+
+        <div class="">
+          <div class="col-sm-offset-3 col-sm-6 registrationFormAlert red" id="divCheckPassword"></div>
+          <script type="text/javascript" src="js/register.js">
+            checkPassword();
+          </script>
+        </div>
+
       </div>
+
+      <div class="form-group">
+
+        <div class="col-sm-2 col-sm-offset-1 control-label">
+          <label for="confirmPassword" style="margin: 8px 0">Confirm Password</label> 
+        </div>
+        <div class="col-sm-6"> 
+          <input size="20" type="password" class="form-control" onkeyup="checkPasswordMatch();" placeholder="Confirm Password " name="confirmPassword" id="confirmPassword">
+        </div>
+        
+        <div class="">
+          <div class="col-sm-offset-3 col-sm-6 registrationFormAlert red" id="divCheckPasswordMatch"></div>
+          <script type="text/javascript" src="js/register.js">
+            checkPasswordMatch();
+          </script>
+        </div>
+
+      </div>
+
 
       <div class="form-group">
         
@@ -106,15 +133,15 @@
         <div class="dropdown col-sm-2">
           <button class="btn btn-default dropdown-toggle" type="button" id="title" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Title
-            <span class="caret"></span>
+            <span class="caret car-mid"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="title">
-            <li><a href="#">Mr.</a></li>
-            <li><a href="#">Miss</a></li>
-            <li><a href="#">Mrs</a></li>
-            <li><a href="#">Dr.</a></li>
-            <li><a href="#">Prof.</a></li>
-            <li><a href="#">Other</a></li>
+            <li><a href="javascript:void(0)">Mr.</a></li>
+            <li><a href="javascript:void(0)">Miss</a></li>
+            <li><a href="javascript:void(0)">Mrs.</a></li>
+            <li><a href="javascript:void(0)">Dr.</a></li>
+            <li><a href="javascript:void(0)">Prof.</a></li>
+            <li><a href="javascript:void(0)">Other</a></li>
           </ul>
         </div>
       </div>  
@@ -157,15 +184,15 @@
         <div class="dropdown col-sm-2 ">
           <button class="btn btn-default dropdown-toggle" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Degree
-            <span class="caret"></span>
+            <span class="caret car-mid"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="degree">
-            <li><a href="#">Prof.</a></li>
-            <li><a href="#">Dr.</a></li>
-            <li><a href="#">Post-Doc</a></li>
-            <li><a href="#">Graduate</a></li>
-            <li><a href="#">Undergraduate</a></li>
-            <li><a href="#">Other</a></li>
+            <li><a href="javascript:void(0)">Prof.</a></li>
+            <li><a href="javascript:void(0)">Dr.</a></li>
+            <li><a href="javascript:void(0)">Post-Doc</a></li>
+            <li><a href="javascript:void(0)">Graduate</a></li>
+            <li><a href="javascript:void(0)">Undergraduate</a></li>
+            <li><a href="javascript:void(0)">Other</a></li>
           </ul>
         </div>
 
@@ -175,10 +202,10 @@
         <div class="dropdown col-sm-2">
           <button class="btn btn-default dropdown-toggle" type="button" id="country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Country
-            <span class="caret"></span>
+            <span class="caret car-mid"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="country">
-            <li><a href="#">Thailand</a></li>
+            <li><a href="javascript:void(0)">Thailand</a></li>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
           </ul>
@@ -223,7 +250,7 @@
         <div class="dropdown col-sm-2">
           <button class="btn btn-default dropdown-toggle" type="button" id="phone_code" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Phone Code
-            <span class="caret"></span>
+            <span class="caret car-mid"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="phone_code">
             <li><a href="#">+66</a></li>
@@ -259,10 +286,10 @@
         <div class="dropdown col-sm-2">
           <button class="btn btn-default dropdown-toggle" type="button" id="institution" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Institution
-            <span class="caret"></span>
+            <span class="caret car-mid"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="institution">
-            <li><a href="#">Chulalongkorn</a></li>
+            <li><a href="javascript:void(0)">Chulalongkorn</a></li>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
           </ul>
@@ -274,10 +301,10 @@
         <div class="dropdown col-sm-2">
           <button class="btn btn-default dropdown-toggle" type="button" id="unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Unit
-            <span class="caret"></span>
+            <span class="caret car-mid"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="unit">
-            <li><a href="#">Chulalongkorn</a></li>
+            <li><a href="#javascript:void(0)">Chulalongkorn</a></li>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
           </ul>
@@ -324,7 +351,7 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="institution_country">
-            <li><a href="#">Thailand</a></li>
+            <li><a href="javascript:void(0)">Thailand</a></li>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
           </ul>
@@ -335,7 +362,7 @@
       <div class="form-group">
         <div class="col-sm-2 col-sm-offset-5">
           <!-- <button type="submit">Register</button> -->
-          <button type="button" class="btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Register</button>
+          <button type="button" class="btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="contactButton">Register</button>
         </div>
       </div>
 
