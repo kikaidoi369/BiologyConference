@@ -2,46 +2,14 @@
 <html>
 <head>
 	<title></title>
-
     <script>
-    // Get the modal
-    var modal = document.getElementById('login');
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-    </script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-            // Set the date we're counting down to
             var countDownDate = new Date("June 12, 2018 23:59:59").getTime();
-
-            // Update the count down every 1 second
             var x = setInterval(function() {
-
-                // Get todays date and time
                 var now = new Date().getTime();
-
-                // Find the distance between now an the count down date
                 var distance = countDownDate - now;
-
-                // Time calculations for days, hours, minutes and seconds
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Output the result in an element with id="countdown"
-                document.getElementById("countDays").innerHTML = days;
-                document.getElementById("countHours").innerHTML = hours;
-                document.getElementById("countMinutes").innerHTML = minutes;
-                document.getElementById("countSeconds").innerHTML = seconds;
-                
-                // If the count down is over, write some text 
+                document.getElementById("countDays").innerHTML = "ONLY "+days+" DAYS LEFT!";
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById("countdown").innerHTML = "EXPIRED";
@@ -57,119 +25,18 @@
                     </div>
                     <ul class="nav navbar-nav" style="float:right">
                         <li>
-                            <a style="margin: 10px 12px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #00c9ff;color: white;font-weight: bold" href="login.html" target="_blank">
-                                Login     
-                            </a>
+                            <a id="countDays" href=""></a>
                         </li>
-
                         <li>
-                            <a style="margin: 10px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #f2ae33;color: white;font-weight: bold" href="register.html">
-                                Register    
-                            </a>
+                            <a style="margin: 10px 12px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #00c9ff;color: white;font-weight: bold" href="login.html" target="_blank">Member Center</a> 
                         </li>
                     </ul>	
                 </div>
             </nav>
-            <div class="container" style="background-color: transparent;">
-                <center style="padding-top:30px;padding-bottom: 30px;background-image: url(../image/DSC_4445.jpg);background-size: cover">
-                    <table style="width: 80%;text-align: center">
-                            <tr style="width: 100%;height: 90px">
-                                <td id="countDays" style="width:25%;font-size: 60px"></td>
-                                <td id="countHours" style="width:25%;font-size: 60px"></td>
-                                <td id="countMinutes" style="width:25%;font-size: 60px"></td>
-                                <td id="countSeconds" style="width:25%;font-size: 60px"></td>
-                            </tr>
-                            <tr style="width: 100%">
-                                <td style="width:25%">Days</td>
-                                <td style="width:25%">Hours</td>
-                                <td style="width:25%">Minutes</td>
-                                <td style="width:25%">Seconds</td>
-                            </tr>
-                            <tr style="width: 100%">
-                                <td style="width: 50%" colspan="2"></td>
-                                <td style="width: 25%"></td>
-                                <td style="width: 25%"></td>
-                            </tr>
-                    </table>
+            <div class="container" style="background-color: transparent">
+                <center style="padding-top:30px;padding-bottom: 30px;background-image: url(../image/DSC_4445.jpg);background-size: cover;height: 240px;margin-bottom: 10px">
+                    
                 </center>
             </div>
-
-            <nav class="navbar-default">    
-                <div class="container-fluid">   
-                    <center>
-                        <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="news.html">Plenary Speakers</a></li>
-                        <li><a href="schedule.html">Important Date</a></li>
-                        <li><a href="programs.html">Programs</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Service1</a></li>
-                                <li><a href="#">Service2</a></li>
-                                <li><a href="#">Service3</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact us</a></li>
-                    </ul>
-                    </center>   
-                </div>  
-            </nav>
-
-<!-- 
-<div id="login" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="image/web.jpg" alt="Avatar" class="avatar">
-      <h2>Login</h2>
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
-
-<div id="register" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('register').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <h2>Register</h2>
-    </div>
-
-    <div class="container">
-
-
-
-
-      <button type="submit">Register</button>
-
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('register').style.display='none'" class="cancelbtn">Cancel</button>
-    </div>
-  </form>
- -->
-
-</div>
-
 </body>
 </html>
