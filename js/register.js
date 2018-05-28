@@ -146,42 +146,29 @@ function checkPasswordMatch()
     }
 }
 
-$(function() {
-  google.script.run.withSuccessHandler(showThings)
-      .getMenuListFromSheet();
-  google.script.run.withSuccessHandler(showMenu)
-      .getMenuListFromSheet();
-});
+// $(function() {
+//   google.script.run.withSuccessHandler(showThings)
+//       .getMenuListFromSheet();
+//   google.script.run.withSuccessHandler(showMenu)
+//       .getMenuListFromSheet();
+// });
 
-function showThings(things) {
-  var list = $('#country');
-  list.empty();
-  for (var i = 0; i < things.length; i++) {
-    list.append('<li>' + things[i] + '</li>');
-  }
-}
+// function showThings(things) {
+//   var list = $('#country');
+//   list.empty();
+//   for (var i = 0; i < things.length; i++) {
+//     list.append('<li>' + things[i] + '</li>');
+//   }
+// }
 
-function showMenu(menuItems) {
-  var list = $('#menu');
-  list.find('option').remove();  // remove existing contents
+// function showMenu(menuItems) {
+//   var list = $('#menu');
+//   list.find('option').remove();  // remove existing contents
 
-  for (var i = 0; i < menuItems.length; i++) {
-    list.append('<option>' + menuItems[i] + '</option>');
-  }
-}
-
-$(function() {
-  google.script.run.withSuccessHandler(showThings)
-      .getLotsOfThings();
-});
-
-function showThings(things) {
-  var list = $('#country');
-  list.empty();
-  for (var i = 0; i < things.length; i++) {
-    list.append('<li>' + things[i] + '</li>');
-  }
-}
+//   for (var i = 0; i < menuItems.length; i++) {
+//     list.append('<option>' + menuItems[i] + '</option>');
+//   }
+// }
 
 $(function(){
   
