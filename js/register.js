@@ -289,10 +289,15 @@ $(document).ready(
          if(!validateEmail("email"))
          {
             return false;
+         }else {
+
          }
+
          if(!checkPassword())
          {
             return false;
+         }else{
+
          }
          // if(!validateText("contactAddress1"))
          // {
@@ -308,3 +313,11 @@ $(document).ready(
         );
     }
 );
+
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
