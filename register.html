@@ -45,14 +45,94 @@
             }, 1000);</script>
 
   <style>
-        .red{
-          color: red;
-        }
-        .car-mid{
-          float: right;
-          margin-top: 7.5px;
-        }
-    </style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font: 16px Arial;  
+  }
+  .autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+  }
+  input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+  }
+  input[type=text] {
+    background-color: #f1f1f1;
+    width: 100%;
+  }
+  input[type=submit] {
+    background-color: DodgerBlue;
+    color: #fff;
+    cursor: pointer;
+  }
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    /*border-bottom: none;*/
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    /*border-bottom: 1px solid #d4d4d4; */
+  }
+  .autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9; 
+  }
+  .autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+  }
+
+  #register{
+    width: 80%;
+  }
+  .form-req{
+    /*float:left; */
+    /*padding-left: 5px;*/
+    color: red;
+    font-size:18px;
+  }
+  .lab-address{
+    margin-top: 8px;
+  }
+  .textarea-m{
+     margin: 8px 0;
+  }
+  .btn-default{
+    margin: 8px 0;
+  }
+  .txt-l{
+    text-align: left;
+  }
+  .lab-mid{
+    margin: 8px 0;
+  }
+  .txt-r{
+    text-align: left;
+  }
+  .red{
+    color: red;
+  }
+  .car-mid{
+    float: right;
+    margin-top: 7.5px;
+  }
+  </style>
 
 </head>
 <body>
@@ -64,26 +144,43 @@
     <form class="form-horizontal" style="border:0">
 
       <div class="form-group">
-        <div class="col-sm-3 col-sm-offset-3">
-          <h2>Register</h2>
-        </div>
+        <!-- <div class="col-sm-3 col-sm-offset-3"> -->
+          <h2 style="text-align: center;">Register</h2>
+        <!-- </div> -->
       </div>
 
       <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="E-mail" style="margin: 8px 0">E-mail</label> 
+          <label for="E-mail" class="lab-mid">E-mail <span class="form-req">*</span></label> 
         </div>
         <div class="col-sm-6"> 
-          <input size= "30" type="text" class="form-control" onkeyup="checkEmailText()" onchange="validateEmail(Email.value)" placeholder="Enter E-mail" type="unique" name="email" id="email">
+          <input size= "30" type="text" class="form-control" onkeyup="checkEmailText()" onchange="validateEmail(Email.value)" placeholder="Enter E-mail" type="unique" name="email" id="email" required>
           
-        </div> 
-        <div class="">
-          <div class="col-sm-offset-3 col-sm-6 registrationFormAlert red" id="divCheckEmailText"></div>
-          <script type="text/javascript" src="js/register.js">
-            checkEmailText();
-            // validateEmail(email);
-          </script>
+        </div>
+        
+        <div class="col-sm-offset-3 col-sm-6 registrationFormAlert red" id="divCheckEmailText"></div> 
+
+      </div>
+
+      <div class="form-group">
+
+        <div class="col-sm-2 col-sm-offset-1 control-label">
+          <label for="password" class="lab-mid">Password <span class="form-req">*</span></label> 
+        </div>
+        <div class="col-sm-6"> 
+          <input size="20" type="password" class="form-control" onkeyup="checkPassword()" placeholder="Enter Password" name="password" id="password" required>
+        </div>
+
+        <div class="col-sm-offset-3 col-sm-6 registrationFormAlert red" id="divCheckPassword"></div>
+        
+
+        <div class="password-strength col-sm-offset-3 col-sm-6">
+          <div class="password-strength-text" aria-live="assertive"></div>
+          <div class="password-strength-title">Password strength:</div>
+          <div class="password-indicator">
+            <div class="indicator"></div>
+          </div>
         </div>
 
       </div>
@@ -91,35 +188,14 @@
       <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="password" style="margin: 8px 0">Password</label> 
+          <label for="confirmPassword" class="lab-mid">Confirm Password <span class="form-req">*</span></label> 
         </div>
         <div class="col-sm-6"> 
-          <input size="20" type="password" class="form-control" onkeyup="checkPassword()" placeholder="Enter Password" name="password" id="password">
-        </div>
-
-        <div class="">
-          <div class="col-sm-offset-3 col-sm-6 registrationFormAlert red" id="divCheckPassword"></div>
-          <script type="text/javascript" src="js/register.js">
-            checkPassword();
-          </script>
-        </div>
-
-      </div>
-
-      <div class="form-group">
-
-        <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="confirmPassword" style="margin: 8px 0">Confirm Password</label> 
-        </div>
-        <div class="col-sm-6"> 
-          <input size="20" type="password" class="form-control" onkeyup="checkPasswordMatch();" placeholder="Confirm Password " name="confirmPassword" id="confirmPassword">
+          <input size="20" type="password" class="form-control" onkeyup="checkPasswordMatch();" placeholder="Confirm Password " name="confirmPassword" id="confirmPassword" required>
         </div>
         
         <div class="">
           <div class="col-sm-offset-3 col-sm-6 registrationFormAlert red" id="divCheckPasswordMatch"></div>
-          <script type="text/javascript" src="js/register.js">
-            checkPasswordMatch();
-          </script>
         </div>
 
       </div>
@@ -128,10 +204,10 @@
       <div class="form-group">
         
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="title" style="margin: 8px 0">Title</label> 
+          <label for="title" class="lab-mid" >Title</label> 
         </div>
         <div class="dropdown col-sm-2">
-          <button class="btn btn-default dropdown-toggle" type="button" id="title" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <button class="btn btn-default dropdown-toggle txt-r" type="button" id="title" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Title
             <span class="caret car-mid"></span>
           </button>
@@ -149,17 +225,17 @@
       <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="first_name" style="margin: 8px 0">First Name</label> 
+          <label for="first_name" class="lab-mid">First Name <span class="form-req">*</span></label> 
         </div>
         <div class="col-sm-6"> 
-          <input size="30" type="text" class="form-control" placeholder="Enter First Name" name="first_name">
+          <input size="30" type="text" class="form-control" placeholder="Enter First Name" name="first_name" required>
         </div>
       </div>
 
       <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="middle_name" style="margin: 8px 0">Middle Name</label> 
+          <label for="middle_name" class="lab-mid">Middle Name</label> 
         </div>
         <div class="col-sm-6"> 
           <input size="30" type="text" class="form-control" placeholder="Enter Middle Name" name="middle_name">
@@ -169,20 +245,20 @@
       <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="last_name" style="margin: 8px 0">Last Name</label> 
+          <label for="last_name" class="lab-mid">Last Name <span class="form-req">*</span></label> 
         </div>
         <div class="col-sm-6"> 
-          <input size="30" type="text" class="form-control" placeholder="Enter Last Name" name="last_name">
+          <input size="30" type="text" class="form-control" placeholder="Enter Last Name" name="last_name" required>
         </div>
       </div>
 
       <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="degree" style="margin: 8px 0">Degree</label> 
+          <label for="degree" class="lab-mid">Degree <span class="form-req">*</span></label> 
         </div>
         <div class="dropdown col-sm-2 ">
-          <button class="btn btn-default dropdown-toggle" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <button class="btn btn-default dropdown-toggle txt-r" type="button" id="degree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Degree
             <span class="caret car-mid"></span>
           </button>
@@ -196,31 +272,37 @@
           </ul>
         </div>
 
-        <div class="col-sm-2 control-label">
-          <label for="country" style="margin: 8px 0">Country</label> 
+      </div>
+
+      <div class="form-group">
+        
+        <div class="col-sm-2 col-sm-offset-1 control-label">
+          <label for="country" class="lab-mid">Country <span class="form-req">*</span></label> 
         </div>
-        <div class="dropdown col-sm-2">
-          <button class="btn btn-default dropdown-toggle" type="button" id="country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <!-- <div class="dropdown col-sm-2">
+          <button class="btn btn-default dropdown-toggle txt-r" type="button" id="country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Country
             <span class="caret car-mid"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="country">
             <li><a href="javascript:void(0)">Thailand</a></li>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
           </ul>
-        </div>
+        </div> -->
 
+        <div class="autocomplete col-sm-2">
+          <input id="country" class="form-control" type="text" name="country" placeholder="Country">
+        </div>
 
       </div>
 
       <!-- <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="country" style="margin: 8px 0">Country</label> 
+          <label for="country" class="lab-mid">Country</label> 
         </div>
         <div class="dropdown col-sm-2">
-          <button class="btn btn-default dropdown-toggle" type="button" id="country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <button class="btn btn-default dropdown-toggle txt-r" type="button" id="country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Country
             <span class="caret"></span>
           </button>
@@ -234,10 +316,10 @@
 
       <div class="form-group">
 
-        <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="address" style="margin: 8px 0">Address</label> 
+        <div class="col-sm-2 col-sm-offset-1 control-label lab-address">
+          <label for="address" >Address <span class="form-req">*</span></label> 
         </div>
-        <div class="col-sm-6"> 
+        <div class="col-sm-6 textarea-m"> 
           <textarea size="100" class="form-control" rows="2" id="address" style="resize: none"></textarea>
         </div>
       </div>
@@ -245,22 +327,30 @@
       <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="phone_code" style="margin: 8px 0">Phone Code</label> 
+          <label for="phone_code" class="lab-mid">Phone Code <span class="form-req">*</span></label> 
         </div>
-        <div class="dropdown col-sm-2">
-          <button class="btn btn-default dropdown-toggle" type="button" id="phone_code" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <!-- <div class="dropdown col-sm-2">
+          <button class="btn btn-default dropdown-toggle txt-r" type="button" id="phone_code" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Phone Code
             <span class="caret car-mid"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="phone_code">
-            <li><a href="#">+66</a></li>
+            <li><a href="#javascript:void(0)">+66</a></li>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
           </ul>
+        </div> -->
+        <div class="autocomplete col-sm-2">
+          <input id="phone_code" class="form-control" type="text" name="phoneCode" placeholder="Phone Code">
         </div>
 
-        <div class="col-sm-2 control-label">
-          <label for="phone_number" style="margin: 8px 0">Phone Number</label> 
+      </div>
+
+
+      <div class="form-group">
+        
+        <div class="col-sm-2 col-sm-offset-1 control-label">
+          <label for="phone_number" class="lab-mid">Phone Number <span class="form-req">*</span></label> 
         </div>
         <div class="col-sm-2"> 
           <input size="20" type="text" class="form-control" placeholder="Enter Phone Number" name="phone_number">
@@ -281,33 +371,10 @@
       <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="institution" style="margin: 8px 0">Institution</label> 
+          <label for="institution" class="lab-mid">Institution <span class="form-req">*</span></label> 
         </div> 
-        <div class="dropdown col-sm-2">
-          <button class="btn btn-default dropdown-toggle" type="button" id="institution" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Institution
-            <span class="caret car-mid"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="institution">
-            <li><a href="javascript:void(0)">Chulalongkorn</a></li>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </ul>
-        </div>
-
-        <div class="col-sm-2  control-label">
-          <label for="unit" style="margin: 8px 0">Unit</label> 
-        </div> 
-        <div class="dropdown col-sm-2">
-          <button class="btn btn-default dropdown-toggle" type="button" id="unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Unit
-            <span class="caret car-mid"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="unit">
-            <li><a href="#javascript:void(0)">Chulalongkorn</a></li>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </ul>
+        <div class="autocomplete col-sm-2">
+          <input id="institution" class="form-control" type="text" name="institution" placeholder="Institution">
         </div>
 
       </div>
@@ -318,7 +385,7 @@
           <label for="unit" style="margin: 8px 0">Unit</label> 
         </div> 
         <div class="dropdown col-sm-2">
-          <button class="btn btn-default dropdown-toggle" type="button" id="unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <button class="btn btn-default dropdown-toggle txt-r" type="button" id="unit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Unit
             <span class="caret"></span>
           </button>
@@ -333,7 +400,7 @@
       <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="department" style="margin: 8px 0">Department</label> 
+          <label for="department" class="lab-mid">Department <span class="form-req">*</span></label> 
         </div> 
         <div class="col-sm-6"> 
           <input size="50" type="text" class="form-control" placeholder="Enter Department" name="department">
@@ -343,19 +410,13 @@
       <div class="form-group">
 
         <div class="col-sm-2 col-sm-offset-1 control-label">
-          <label for="institution_country" style="margin: 8px 0">Institution Country</label> 
+          <label for="institution_country" class="lab-mid">Institution Country</label> 
         </div> 
-        <div class="dropdown col-sm-2">
-          <button class="btn btn-default dropdown-toggle" type="button" id="institution_country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Institution Country
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="institution_country">
-            <li><a href="javascript:void(0)">Thailand</a></li>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </ul>
+        
+        <div class="autocomplete col-sm-2">
+          <input id="institutionCountry" class="form-control" type="text" name="institutionCountry" placeholder="Country">
         </div>
+
       </div>
 
 
@@ -367,8 +428,19 @@
       </div>
 
     </form>
+    
 
+    <script type="text/javascript" src="js/register.js">
+      checkEmailText();
+      checkPassword();
+      checkPasswordMatch();
+    </script>
 
+    <script type="text/javascript">
+      autocomplete(document.getElementById("country"), countries);
+      autocomplete(document.getElementById("phone_code"), dialcodes);
+      autocomplete(document.getElementById("institutionCountry"), countries);
+    </script>
 
     </div>
   </div>

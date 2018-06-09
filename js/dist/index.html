@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Password Strength Meter For Bootstrap Demos</title>
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/lumen/bootstrap.min.css">
+<style>
+body { background-color: #fafafa; }
+.container { margin-top: 150px; }
+</style>
+</head>
+
+<body>
+    <div id="jquery-script-menu">
+<div class="jquery-script-center">
+<ul>
+<li><a href="https://www.jqueryscript.net/form/Password-Strength-Meter-Bootstrap.html">Download This Plugin</a></li>
+<li><a href="https://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+</ul>
+<div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+<div class="container">
+    <h1>Password Strength Meter For Bootstrap Demos</h1>
+<h2>With Text</h2>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="form-label col-sm-2">Password</label>
+        <div class="col-sm-4">
+            <input type="text" placeholder="Password ..." class="form-control" id="example-getting-started-input" />
+        </div>
+        <div class="col-sm-6" id="example-getting-started-text" style="font-weight:bold;padding:6px 12px;">
+
+        </div>
+    </div>
+</form>
+<h2>With Tooltip</h2>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="form-label col-sm-2">Password</label>
+        <div class="col-sm-4">
+            <input type="text" placeholder="Password ..." class="form-control" id="example-tooltip" />
+        </div>
+    </div>
+</form>
+<h2>With Progress bar</h2>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="form-label col-sm-2">Password</label>
+        <div class="col-sm-4">
+            <input type="text" placeholder="Password ..." class="form-control" id="example-progress" />
+        </div>
+        <div class="col-sm-6" id="example-getting-started-text" style="font-weight:bold;padding:6px 12px;">
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label col-sm-2">Password Strength</label>
+        <div class="col-sm-4" id="example-progress-bar-container">
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-primary">Login</button>
+        </div>
+    </div>
+</form>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="dist/js/password-score.js"></script>
+<script src="dist/js/password-score-options.js"></script>
+
+<script src="dist/js/bootstrap-strength-meter.js"></script>
+<script>
+ $(document).ready(function() {
+	 $('#example-getting-started-input').strengthMeter('text', {
+            container: $('#example-getting-started-text')
+        });
+        $('#example-tooltip').strengthMeter('tooltip');
+		$('#example-progress').strengthMeter('progressBar', {
+            container: $('#example-progress-bar-container')
+        });
+    });
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46156385-1', 'cssscript.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
