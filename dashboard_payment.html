@@ -15,37 +15,21 @@
         });</script>
 
                 <!--JS for Countdown -->
+                <!--JS for Countdown -->
     <script>
-            // Set the date we're counting down to
-            var countDownDate = new Date("May 13, 2018 23:59:59").getTime();
-
-            // Update the count down every 1 second
+            var countDownDate = new Date("June 12, 2018 23:59:59").getTime();
             var x = setInterval(function() {
-
-                // Get todays date and time
                 var now = new Date().getTime();
-
-                // Find the distance between now an the count down date
                 var distance = countDownDate - now;
-
-                // Time calculations for days, hours, minutes and seconds
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Output the result in an element with id="countdown"
-                document.getElementById("countDays").innerHTML = days;
-                document.getElementById("countHours").innerHTML = hours;
-                document.getElementById("countMinutes").innerHTML = minutes;
-                document.getElementById("countSeconds").innerHTML = seconds;
-                
-                // If the count down is over, write some text 
+                document.getElementById("countDays").innerHTML = "ONLY "+days+" DAYS LEFT!";
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById("countdown").innerHTML = "EXPIRED";
                 }
-            }, 1000);    </script>
+            }, 1000);
+    </script>
 
     <style>
 
@@ -80,7 +64,64 @@
 </head>
 <body>
 
-	<div id="header"></div>
+    <!-- HEADER -->
+    <!-- Navbar : Logo, Member center -->
+    <nav class="navbar-default">    
+        <div class="container-fluid">   
+            <div class="navbar-header"> 
+                <div class="navbar-brand">WebConference</div>
+            </div>
+            <ul class="nav navbar-nav" style="float:right">
+                <li>
+                    <a id="countDays" href="schedule.html"></a>
+                </li>
+                <li>
+                    <a style="margin: 10px 12px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #00c9ff;color: white;font-weight: bold" href="dashboard.html">Dashboard</a> 
+                </li>
+                <li>
+                    <a style="margin: 10px 12px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #ff5858;color: white;font-weight: bold" href="login.html">Log out</a>
+                </li>
+            </ul>   
+        </div>
+    </nav>
+    <!-- Upcoming Event -->
+    <div class="container" style="background-color: transparent">
+        <center style="padding-top:30px;padding-bottom: 30px;background-image: url(../image/DSC_4445.jpg);background-size: cover;height: 240px;margin-bottom: 10px">
+            <h1>Upcoming Event</h1>
+        </center>
+    </div>
+    <!-- Navbar Menu -->
+    <nav class="navbar-default">    
+        <div class="container-fluid">   
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="speakers.html">Plenary Speakers</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="schedule.html">Important Dates</a></li>
+                                <li><a href="programs.html">Programs</a></li>
+                            </ul>
+                    </li>
+                    <li><a href="abstract.html">Abstract</a></li>
+                    <li><a href="registration.html">Registration</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="general_information.html">General Information</a></li>
+                            <li><a href="accommodation.html">Accommodation</a></li>
+                            <li><a href="convention_venue">Convention Venue</a></li>
+                            <li><a href="excursion.html">Excursion</a></li>
+                            <li><a href="visa.html">Visa</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about_us.html">About us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>  
+        </div>  
+    </nav>
+    <!-- HEADER -->
+
 
 	<div class="container" style="padding: 0px">
 
@@ -88,17 +129,31 @@
             <center>
                 <div class="sidenav" style="background-color: white">
                 <a href="dashboard.html">General</a>
-                <a href="#">Status</a>
-                <a class="active" href="#">Payment</a>
-                <a href="#">Abstract</a>
-                <a href="#">Plan</a>
+                <a href="dashboard_status.html">Status</a>
+                <a class="active" href="dashboard_payment.html">Payment</a>
+                <a href="dashboard_abstract.html">Abstract</a>
             </div>
             </center>
         </div>
         <div class="col-sm-9" style="padding-left: 5px">
             <div style="border-left: 1px solid #938a8a;margin-left: 8px;padding-left: 20px">
-                <h2 style="font-family: Dosis, serif;margin-bottom: 20px;font-weight: 20px;font-weight: bold">Payment</h2>
+                            <h2 style="font-family: Dosis, serif;margin-bottom: 20px;font-weight: 20px;font-weight: bold">Payment</h2>
                 <hr>
+                    <input type="text" name="payment-id" placeholder="transaction-ID"><button>Submit</button>
+                <center>
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="margin-left: 25%;margin-right: 25%;margin-top: 20px">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="pills-paypal-tab" data-toggle="pill" href="#pills-paypal" role="tab" aria-controls="pills-paypal" aria-selected="true">National Payment</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="pills-thaibank-tab" data-toggle="pill" href="#pills-thaibank" role="tab" aria-controls="pills-thaibank" aria-selected="false">Thai Payment</a>
+                      </li>
+                    </ul>
+                </center>
+
+
+
+        <div class="tab-pane fade" id="pills-paypal" role="tabpanel" aria-labelledby="pills-paypal-tab">
                 <center>
                 <table class="payment">
                     <tr>
@@ -147,12 +202,67 @@
                     </tr>
                 </table>
                 </center>
-            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-thaibank" role="tabpanel" aria-labelledby="pills-thaibank-tab">
+                <center>
+                <table class="payment">
+                    <tr>
+                        <th>Type</th>
+                        <th>Price(Baht)</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Listener</td>
+                        <td>250</td>
+                        <td>
+                            <form style="border:0px;margin-top: 5px" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                                <input type="hidden" name="cmd" value="_xclick">
+                                <input type="hidden" name="business" value="phonkornkrit@gmail.com">
+                                <input type="hidden" name="lc" value="US">
+                                <input type="hidden" name="item_name" value="Listener 250 THB">
+                                <input type="hidden" name="amount" value="250.00">
+                                <input type="hidden" name="currency_code" value="THB">
+                                <input type="hidden" name="button_subtype" value="services">
+                                <input type="hidden" name="no_note" value="0">
+                                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynow_LG.gif:NonHostedGuest">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/th_TH/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Author</td>
+                        <td>400</td>
+                        <td>
+                            <form style="border:0px;margin-top: 5px" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                                <input type="hidden" name="cmd" value="_xclick">
+                                <input type="hidden" name="business" value="phonkornkrit@gmail.com">
+                                <input type="hidden" name="lc" value="US">
+                                <input type="hidden" name="item_name" value="Listener 250 THB">
+                                <input type="hidden" name="amount" value="250.00">
+                                <input type="hidden" name="currency_code" value="THB">
+                                <input type="hidden" name="button_subtype" value="services">
+                                <input type="hidden" name="no_note" value="0">
+                                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynow_LG.gif:NonHostedGuest">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/th_TH/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+                </center>
+          </div>
+        </div>
+                
+        </div>
             
         </div>
 	</div>
 
-	<div id="footer"></div>
+    <footer style="background-color:#008080;position:relative;bottom:0;right: 0;left: 0;padding: 1rem;width: 100%;color: white;text-align: center;margin-top: 10px">
+        <h3>This is footer</h3>
+    </footer>
 
 </body>
 </html>
