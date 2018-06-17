@@ -6901,6 +6901,9 @@ button.close {
   font-size: 28px;
   border-bottom:1px solid #b6b6b6 ;
   padding-bottom: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #5a90ff;
 }
 
 
@@ -6954,12 +6957,17 @@ button.close {
 }
 
 .profile-frame{
-  margin: 20px 10%;
+  margin: 20px 5%;
   padding: 20px 30px;
   display: inline-block;
-  border: 2px solid #a2c2e6;
-  border-radius: 5px;
-  width: 80%;
+  border: 1px solid #a2c2e6;
+  width: 90%;
+  background-color: #d4e2e929;
+}
+.profile-frame img{
+  width: 180px;
+  height: 180px;
+  float: left;
 }
 
 .profile-name{
@@ -7001,9 +7009,35 @@ button.close {
 
 /*----- END BUTTON -----*/
 
+@font-face{
+  font-family: Noto Sans;
+  src: url(../fonts/NotoSans-Regular.ttf);
+}
+/*----- START TABLE -----*/
+
+
+  .schedule{
+      margin: 40px 30px;
+      width: 80%;
+  }
+
+  table.schedule td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      width: 25%;
+  }
+  table.schedule th {
+      text-align:center;
+      background-color: #9ad4de;
+      color: #504531;
+  }
+  table.schedule td:nth-child(even) {
+      width: 60%;
+  }
+/*----- END TABLE -----*/
+
 /*----- START DASHBOARD -----*/
-
-
 
 
 /*----- END DASHBOARD -----*/
