@@ -1088,8 +1088,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #eee;
-  background-image: 
+  background-color: #e9e9e92b;
 }
 input,
 button,
@@ -4556,15 +4555,34 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 
-
 .navbar-default {
   background-color: #f8f8f8;
   border-color: #e7e7e7;
 }
-.navbar-default .navbar-brand {
-  color: antiquewhite;
-  font-size: 31px;
+
+
+@media (min-width: 768px){
+    .navbar-default .navbar-brand {
+        color: antiquewhite;
+        font-size: 17px;
+        padding-top: 19px;
+        padding-bottom: 15px;
+    }
 }
+
+@media (min-width: 1024px){
+    .navbar-default .navbar-brand {
+      color: antiquewhite;
+      font-size: 19px;
+      padding-top: 19px;
+      padding-bottom: 15px;
+      margin-right: 0;
+      margin-left: 0;
+      width: auto;
+    }
+}
+
+
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
 
@@ -6888,7 +6906,7 @@ button.close {
 
 /*Content*/
 .paragraph{
-  margin:0px 28px;
+  margin:20px 60px;
 }
 .content-tab{
   margin: 40px 25px;

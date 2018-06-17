@@ -1,145 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Biology Conference</title>
+    <title>ASA2018</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- CountDown JS -->
+    <link rel="shortcut icon" type="image" href="/image/spider.png">
     <script>
-            var countDownDate = new Date("June 12, 2018 23:59:59").getTime();
-            var x = setInterval(function() {
-                var now = new Date().getTime();
-                var distance = countDownDate - now;
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                document.getElementById("countDays").innerHTML = "ONLY "+days+" DAYS LEFT!";
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "EXPIRED";
-                }
-            }, 1000);
+        $(function(){
+            $("#header").load("header/header.html");
+            $("#footer").load("header/footer.html");
+        });
     </script>
+
 </head>
 <body>
-
-    <!-- HEADER -->
-    <!-- Navbar : Logo, Member center -->
-    <nav class="navbar-default">    
-        <div class="container-fluid">   
-            <div class="navbar-header"> 
-                <div class="navbar-brand">WebConference</div>
-            </div>
-            <ul class="nav navbar-nav" style="float:right">
-                <li>
-                    <a id="countDays" href="schedule.html"></a>
-                </li>
-                <li>
-                    <a style="margin: 10px 12px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #00c9ff;color: white;font-weight: bold" href="login.html" target="_blank">Login</a> 
-                </li>
-                <li>
-                    <a style="margin: 10px 12px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: orange;color: white;font-weight: bold" href="register.html" target="_blank">Register</a>
-                </li>
-            </ul>   
-        </div>
-    </nav>
-    <!-- Upcoming Event -->
-    <div class="container" style="background-color: transparent">
-        <center style="padding-top:30px;padding-bottom: 30px;background-image: url(../image/DSC_4445.jpg);background-size: cover;height: 240px;margin-bottom: 10px">
-            <h1>Upcoming Event</h1>
-        </center>
-    </div>
-    <!-- Navbar Menu -->
-    <nav class="navbar-default">    
-        <div class="container-fluid">   
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="speakers.html">Plenary Speakers</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="schedule.html">Important Dates</a></li>
-                                <li><a href="programs.html">Programs</a></li>
-                            </ul>
-                    </li>
-                    <li><a href="abstract.html">Abstract</a></li>
-                    <li><a href="registration.html">Registration</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="general_information.html">General Information</a></li>
-                            <li><a href="accommodation.html">Accommodation</a></li>
-                            <li><a href="convention_venue">Convention Venue</a></li>
-                            <li><a href="excursion.html">Excursion</a></li>
-                            <li><a href="visa.html">Visa</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about_us.html">About us</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
-                </ul>  
-        </div>  
-    </nav>
-    <!-- HEADER -->
+    <header id="header"></header>
 
         <div class="container">
             <h3 class="head-page">2018 International Conference on Biology</h3>
-            <div class="content-tab">
-                <h4 class="content-tab-general">GENERAL</h4>
-                <div class="paragraph">
-                <button class="button-con green">GREEN BUTTON</button>
-                <button class="button-con red">RED BUTTON</button>
-                <button class="button-con blue">BLUE BUTTON</button>
-                <button class="button-con yellow">YELLOW BUTTON</button>
-                <button class="button-con grey">GREY BUTTON</button>
-                </div>
-
-            </div>
 
             <div class="content-tab">
-                <h4 class="content-tab-confidence">CONFIDENCE TAB</h4>
+                <h4 class="content-tab-alert">WELCOME</h4>
                 <div class="paragraph">
-                <p>
-                    International Symposium on Business and Social Sciences (ISBSS) is an international platform for scholars, researchers and practitioners to discuss interdisciplinary research and practices in the fields of Business, Economics, Finance, Management, Communication, Society, Education, Culture, Politics, Law and Psychology.
-                </p>
-                <p>
-                    2018 ISBSS will take place from August 28-30, 2018 in Singapore. Prospective authors are invited to submit original research abstracts or full papers which were not, are not and have not been submitted/published/under consideration in other conferences and journals.
-                </p>
-                </div>
-            </div>
+                    <p>
+                        The Asian Society of Arachnology (ASA) invites you to join us at the 5th ASA conference in Chulalongkorn University (CU), Bangkok, Thailand. 
+                    </p>
 
-            <div class="content-tab">
-                <h4 class="content-tab-alert">ALERT TAB</h4>
-                <div class="paragraph">
-                    <ul>
-                        <li>Organization 1</li>
-                        <li>Organization 2</li>
-                        <li>Organization 3</li>
-                    </ul>
-                </div>
+                    <p>
+                        The conference will be held during the 19th –22nd November 2018 in one of the most prestigious research institutions in Thailand, Chulalongkorn University in the city of Bangkok. Bangkok is the capital and most populous city in Thailand and among the world top tourist destinations.  Participants can arrive in one of the two international airports available: Don Mueang airport and Suvarnabhumi airport.
+                    </p>
 
-            </div>
+                    <p>
+                        The conference venue will be hosted at the Chaloem Rajakumari 60 Building (AKA Chamchuri 10) located in CU beautiful main campus with accessibility to major public transportations to get to most major tourist attractions, accommodations, and foods in Bangkok. A one-day excursion (21st November) will bring you to King Mongkut’s University of Technology Thonburi, Ratchaburi campus, Ratchaburi province. The vast landscape of the campus (over 20+ hectares) covers primary dipterocarp forest along with secondary and tertiary successions adjacent (less than 50 km) to the border of Myanmar.  You will have the experience of encountering arachnids in a tropical seasonal rain forest.
+                    </p>
 
-            <div class="content-tab">
-                <h4 class="content-tab-danger">DANGER TAB</h4>
-                <div class="paragraph">
-                <p>
-                    International Symposium on Business and Social Sciences (ISBSS) is an international platform for scholars, researchers and practitioners to discuss interdisciplinary research and practices in the fields of Business, Economics, Finance, Management, Communication, Society, Education, Culture, Politics, Law and Psychology.
-                </p>
-                <p>
-                    2018 ISBSS will take place from August 28-30, 2018 in Singapore. Prospective authors are invited to submit original research abstracts or full papers which were not, are not and have not been submitted/published/under consideration in other conferences and journals.
-                </p>
+                    <p>
+                        We look forward to welcoming you in 2018 in Bangkok!
+                    </p>
+
+                    <p>
+                        Best Regards,
+                    </p>
+
+                    <p>
+                        <b>Chaowalit Songsangchote, Wimolwan Chotwong, Prapun Traiyasut and Natapot Warrit</b>
+                    </p>
+                    <p>
+                        <i>Conference Organizers</i>
+                    </p>
+
                 </div>
             </div>
 
-            <img src="image/bird.jpg" width="460px" style="margin:20px">
 
-            <center>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.047769816194!2d100.53032646849255!3d13.737644486526532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ed34ddfd63f%3A0x89a5f513c68b932!2z4Lie4Li04Lie4Li04LiY4Lig4Lix4LiT4LiR4LmM4LiY4Lij4Lij4Lih4LiK4Liy4LiV4Li04Lin4Li04LiX4Lii4Liy4LmB4Lir4LmI4LiH4LiI4Li44Lis4Liy4Lil4LiH4LiB4Lij4LiT4LmM4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii!5e0!3m2!1sth!2sth!4v1527436537148" width="80%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </center>
         </div>
 
-    <footer style="background-color:#008080;position:relative;bottom:0;right: 0;left: 0;padding: 1rem;width: 100%;color: white;text-align: center;margin-top: 10px">
-        <h3>This is footer</h3>
+    <footer id="footer">
     </footer>
+
+
 </body>
 </html>
