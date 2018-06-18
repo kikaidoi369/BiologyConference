@@ -6956,6 +6956,14 @@ button.close {
   margin-top: 0px;
 }
 
+.content-tab-chula{
+  border-bottom: 0.5px solid #c3c0c0fa;
+  padding: 12px;
+  background-color:#ed81da;
+  color: white;
+  margin-top: 0px;
+}
+
 .profile-frame{
   margin: 20px 5%;
   padding: 20px 30px;
