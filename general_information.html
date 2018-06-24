@@ -14,15 +14,26 @@
     </script>
     <style>
         .left-menu-general{
-            margin-left: 25px;
+            margin: 0px 25px;
             width: 170px;
+            padding: 0;
+            display: block;
+            box-shadow: 2px 4px #eeeeee;
         }
         .left-menu-general a{
             display: block;
-            background-color: grey;
+            background-color: #dddddd;
             padding: 5px 10px;
-            border-bottom: 1px solid black;
+            border-bottom: 1px solid #717171;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
         }
+        .left-menu-general a:hover{
+            background-color: #888;
+            color: black;
+        }
+
     </style>
 </head>
 <body style="font-family: 'Noto Sans', sans-serif">
@@ -30,12 +41,36 @@
 
         <div class="container">
             <h3 class="head-page">GENERAL INFORMATION</h3>
-            <div class="left-menu-general">
-                <a href="index.html">BANGKOK</a>
-                <a href="news.html">PRACTICAL</a>
-                <a href="abstract.html">TRANSPORTATIONS</a>
-                <a href="registration.html">CURRENCY EXCHANGE</a>
-                <a href="programs.html">HOSPITALS & CLINICS</a>
+            <div class="col-sm-4">
+                <div class="left-menu-general">
+                    <a data-toggle="tab" href="#bangkok">BANGKOK</a>
+                    <a data-toggle="tab" href="#practical">PRACTICAL</a>
+                    <a data-toggle="tab" href="#transprotations">TRANSPORTATIONS</a>
+                    <a data-toggle="tab" href="#currency">CURRENCY EXCHANGE</a>
+                    <a data-toggle="tab" href="#hospitals">HOSPITALS & CLINICS</a>
+                </div>
+            </div>
+            <div class="col-sm-8" style="height: 400px">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="bangkok">
+                        <h4 class="content-tab-general">Bangkok</h4>
+                        <p>
+                            Bangkok is the capital and most populous city in Thailand (10+ Millions).  Visitors to Bangkok will enjoy historical attractions, temples, museums, parks, shopping malls both luxury and flea markets, and street vendors.
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="practical">
+                        <h4 class="content-tab-general">Practical</h4>
+                    </div>
+                    <div class="tab-pane fade" id="transprotations">
+                        <h4 class="content-tab-general">Transportations</h4>
+                    </div>
+                    <div class="tab-pane fade" id="currency">
+                        <h4 class="content-tab-general">Currency Exchange</h4>
+                    </div>
+                    <div class="tab-pane fade" id="hospitals">
+                        <h4 class="content-tab-general">Hospitals & Clinics</h4>
+                    </div>
+                </div>
             </div>
         </div>
 

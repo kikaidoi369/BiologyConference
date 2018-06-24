@@ -1,164 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard Abstract</title>
-
+    <title>ASA2018</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dosis">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <link rel="shortcut icon" type="image" href="/image/spider.png">
     <script>
         $(function(){
-            $("#header").load("header/header.html");
+            $("#header").load("header/header_dashboard.html");
             $("#footer").load("header/footer.html");
-        });</script>
-                <!--JS for Countdown -->
-    <script>
-            var countDownDate = new Date("June 12, 2018 23:59:59").getTime();
-            var x = setInterval(function() {
-                var now = new Date().getTime();
-                var distance = countDownDate - now;
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                document.getElementById("countDays").innerHTML = "ONLY "+days+" DAYS LEFT!";
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "EXPIRED";
-                }
-            }, 1000);
+        });
     </script>
 </head>
-<body>
+<body style="font-family: 'Noto Sans', sans-serif">
+    <header id="header"></header>
 
-    <!-- HEADER -->
-    <!-- Navbar : Logo, Member center -->
-    <nav class="navbar-default">    
-        <div class="container-fluid">   
-            <div class="navbar-header"> 
-                <div class="navbar-brand">WebConference</div>
+        <div class="container" style="padding: 0px">
+
+            <div class="col-sm-3" style="padding: 0px">
+                <center>
+                    <div class="sidenav" style="background-color: white">
+                        <a href="dashboard.html">General</a>
+                        <a href="dashboard_status.html">Status</a>
+                        <a href="dashboard_payment.html">Payment</a>
+                        <a class="active" href="dashboard_abstract.html">Abstract</a>
+                    </div>
+                </center>
             </div>
-            <ul class="nav navbar-nav" style="float:right">
-                <li>
-                    <a id="countDays" href="schedule.html"></a>
-                </li>
-                <li>
-                    <a style="margin: 10px 12px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #00c9ff;color: white;font-weight: bold" href="dashboard.html">Dashboard</a> 
-                </li>
-                <li>
-                    <a style="margin: 10px 12px;padding: 4px 12px;border-radius: 5px;border: 1px solid #7cb7ea;background: #ff5858;color: white;font-weight: bold" href="login.html">Log out</a>
-                </li>
-            </ul>   
-        </div>
-    </nav>
-    <!-- Upcoming Event -->
-    <div class="container" style="background-color: transparent">
-        <center style="padding-top:30px;padding-bottom: 30px;background-image: url(../image/DSC_4445.jpg);background-size: cover;height: 240px;margin-bottom: 10px">
-            <h1>Upcoming Event</h1>
-        </center>
-    </div>
-    <!-- Navbar Menu -->
-    <nav class="navbar-default">    
-        <div class="container-fluid">   
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="speakers.html">Plenary Speakers</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="schedule.html">Important Dates</a></li>
-                                <li><a href="programs.html">Programs</a></li>
-                            </ul>
-                    </li>
-                    <li><a href="abstract.html">Abstract</a></li>
-                    <li><a href="registration.html">Registration</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="general_information.html">General Information</a></li>
-                            <li><a href="accommodation.html">Accommodation</a></li>
-                            <li><a href="convention_venue">Convention Venue</a></li>
-                            <li><a href="excursion.html">Excursion</a></li>
-                            <li><a href="visa.html">Visa</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about_us.html">About us</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
-                </ul>  
-        </div>  
-    </nav>
-    <!-- HEADER -->
-
-
-	<div class="container" style="padding: 0px">
-
-        <div class="col-sm-3" style="padding: 0px">
-            <center>
-                <div class="sidenav" style="background-color: white">
-                    <a href="dashboard.html">General</a>
-                    <a href="dashboard_status.html">Status</a>
-                    <a href="dashboard_payment.html">Payment</a>
-                    <a class="active" href="dashboard_abstract.html">Abstract</a>
-                </div>
-            </center>
-        </div>
         <div class="col-sm-9" style="padding-left: 5px">
             <div style="border-left: 1px solid #938a8a;margin-left: 8px;padding-left: 20px">
-                <h2 style="font-family: Dosis, serif;margin-bottom: 20px;font-weight: 20px;font-weight: bold">Abstract</h2>
+                <h2 style="font-weight: 20px;font-weight: bold">Abstract</h2>
                 <hr>
                 <p>Please update your abstract</p>
                 <br>
-                    <form>
-                        <div style="border-radius: 1px solid black">
+                    <form method="post">
+                        <div style="height: 60px;width: 100%">
+                            <p id="file">No chosen file</p>
                             <input style="width: 0.1px;height: 0.1px;opacity: 0;overflow: hidden;position: absolute;z-index: -1" id="myFile" type="file" name="file" accept=".pdf,.docx,.rtf" required  onchange="myFunction()">
-                            <label for="myFile" style="font-size: 1.25em;font-weight: 700;color: white;background-color: black;display: inline-block;cursor: pointer;" id="myFile">Choose a file</label>
-                            <p id="demo">No chosen file</p>
+                            <label class="button-con blue" for="myFile" style="font-weight: 700;color: white;cursor: pointer;float: right;" id="myFile">Choose a file</label>
+                            
                         </div>
 
-                        
-                        <input class="button-con green" type="button" name="Submit" value="Submit">
-                    </form>
-    
-<script>
-    function myFunction(){
-        var x = document.getElementById("myFile");
-        var output_text = "";
-        if ('files' in x) {
-            if (x.files.length == 0) {
-                output_text = "Select one or more files.";
-            } else {
-                    var file = x.files[0];
-                    if ('name' in file) {
-                        output_text += "name: " + file.name + "<br>";
-                    }
-                    if ('size' in file) {
-                        output_text += "size: " + Math.round(file.size / Math.pow(1024, 1), 2) + " KB <br>";
-                }
-            }
-        } 
-        else {
-            if (x.value == "") {
-                output_text += "Select one or more files.";
-            } else {
-                output_text += "The files property is not supported by your browser!";
-                output_text  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
-            }
-        }
-        document.getElementById("demo").innerHTML = output_text;
-    }
-</script>
-
-
-                        
+                        <input style="margin: 15px 40%;" class="button-con green" type="submit" name="Submit" value="Submit">
+                    </form>     
             </div>
             
         </div>
-	</div>
+    </div>
+        </div>
 
-
-    <footer style="background-color:#008080;position:relative;bottom:0;right: 0;left: 0;padding: 1rem;width: 100%;color: white;text-align: center;margin-top: 10px">
-        <h3>This is footer</h3>
-    </footer>
-
+    <footer id="footer"></footer>
+    <script>
+        function myFunction(){
+            var x = document.getElementById("myFile");
+            var output_text = "";
+            if ('files' in x) {
+                if (x.files.length == 0) {
+                    output_text = "Select a file";
+                } else {
+                        var file = x.files[0];
+                        if ('name' in file) {
+                            output_text += "" + file.name + "<br>";
+                        }
+/*                        if ('size' in file) {
+                            output_text += "size: " + Math.round(file.size / Math.pow(1024, 1), 2) + " KB <br>";
+                    }*/
+                }
+            } 
+            else {
+                if (x.value == "") {
+                    output_text += "Select a file";
+                } else {
+                    output_text += "The files property is not supported by your browser!";
+                    output_text  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+                }
+            }
+            document.getElementById("file").innerHTML = output_text;
+        }
+    </script>           
 </body>
 </html>

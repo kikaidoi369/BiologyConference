@@ -1,53 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Contact us</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <title>ASA2018</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image" href="/image/spider.png">
     <script>
         $(function(){
             $("#header").load("header/header.html");
             $("#footer").load("header/footer.html");
-        });</script>
-                <!--JS for Countdown -->
-    <script>
-            // Set the date we're counting down to
-            var countDownDate = new Date("June 12, 2018 23:59:59").getTime();
-
-            // Update the count down every 1 second
-            var x = setInterval(function() {
-
-                // Get todays date and time
-                var now = new Date().getTime();
-
-                // Find the distance between now an the count down date
-                var distance = countDownDate - now;
-
-                // Time calculations for days, hours, minutes and seconds
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Output the result in an element with id="countdown"
-                document.getElementById("countDays").innerHTML = days;
-                document.getElementById("countHours").innerHTML = hours;
-                document.getElementById("countMinutes").innerHTML = minutes;
-                document.getElementById("countSeconds").innerHTML = seconds;
-                
-                // If the count down is over, write some text 
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "EXPIRED";
-                }
-            }, 1000);
+        });
     </script>
 </head>
-<body>
-	<div id="header"></div>
+<body style="font-family: 'Noto Sans', sans-serif">
+    <header id="header"></header>
 
-	<div id="footer"></div>
+        <div class="container">
+            <h3 class="head-page">CONTACT US</h3>
 
+        </div>
+
+    <footer id="footer"></footer>
+                
 </body>
 </html>

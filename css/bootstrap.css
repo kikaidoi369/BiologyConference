@@ -1084,7 +1084,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -4177,7 +4177,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .tab-content > .tab-pane {
   display: none;
-  padding: 20px;
 }
 .tab-content > .active {
   display: block;
@@ -7029,19 +7028,42 @@ button.close {
       width: 80%;
   }
 
-  table.schedule td, th {
+  table.schedule td  {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
       width: 25%;
   }
-  table.schedule th {
+  table.schedule th  {
       text-align:center;
       background-color: #9ad4de;
       color: #504531;
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+      width: 25%;
   }
   table.schedule td:nth-child(even) {
       width: 60%;
+  }
+
+  .profile{
+    width: 100%;
+  }
+
+  table.profile td:nth-child(1){
+      width: 10%;
+  }
+  table.profile td:nth-child(2){
+      width: 30%;
+  }
+
+  #file{
+    width: 390px;
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 9px 0px;
+    border: 1px solid #ddd;  
   }
 /*----- END TABLE -----*/
 
