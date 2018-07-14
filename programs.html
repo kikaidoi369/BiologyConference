@@ -22,11 +22,15 @@
             <center>
                 <table class="schedule">
                     <tr>
-                        <th colspan="2">July</th>
+                        <th colspan="2">Sunday November 11<sup>th</sup></th>
                     </tr>
                     <tr>
-                        <td>1 July, 2017</td>
-                        <td>Decription</td>
+                        <td>12:00–18:00</td>
+                        <td>Registration</td>
+                    </tr>
+                    <tr>
+                        <td>12:00–18:00</td>
+                        <td>Registration</td>
                     </tr>
                     <tr>
                         <th colspan="2">August</th>
@@ -53,8 +57,35 @@
                     </tr>
                 </table>
             </center>
+            <div id=table_test>
+            </div>
         </div>
-        
+        <script>
+            var start_date  = new Date("2018-11-11");
+            var day_list    = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]; 
+            var month_list  = [
+                                "January", "February", "March",
+                                "April", "May", "June", "July",
+                                "August", "September", "October",
+                                "November", "December"
+                              ];
+            list_event = ["12:00-18:00","Registration"];
+            console.log(day_list[start_date.getDay()]+month_list[start_date.getMonth()]);
+            console.log(list_event);
+            var table    = document.createElement('table');
+            var tr  =   document.createElement('tr');
+            var td  =   document.createElement('td');
+            td.appendChild(document.createTextNode(list_event[0]));           tr.appendChild(td);
+            var td  =   document.createElement('td');
+            td.appendChild(document.createTextNode(list_event[1]));
+            tr.appendChild(td);
+            var tbody = document.createElement('tbody');
+            tbody.appendChild(tr);
+            table.appendChild(tbody);
+            table.classList.add('schedule')
+            var div =   document.getElementById('table_test');
+            div.appendChild(table)
+        </script>
         <footer id="footer"></footer> 
 </body>
 </html>

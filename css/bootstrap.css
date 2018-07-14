@@ -6908,7 +6908,7 @@ button.close {
 
 /*Content*/
 .paragraph{
-  margin:20px 60px;
+  margin:15px 40px;
 }
 .content-tab{
   margin: 40px 25px;
@@ -6968,19 +6968,26 @@ button.close {
   padding: 20px 30px;
   display: inline-block;
   border: 1px solid #a2c2e6;
-  width: 90%;
+  width: 95%;
   background-color: #d4e2e929;
 }
 .profile-frame img{
   width: 180px;
   height: 180px;
   float: left;
+  margin: 5px
 }
 
 .profile-name{
    margin:0 0 10px 0;
    padding-bottom: 10px;
    border-bottom: 1px solid #a5a9ad;
+}
+
+.profile-content{
+   margin-left: 10px;
+   width: 68%;
+   float: right;
 }
 
 /*----- END BODY -----*/
@@ -6997,20 +7004,41 @@ button.close {
     background-color: #52B956;
     color: white;
   }
+    .button-con.green:hover {
+    background-color: #52B956b5;
+    color: white;
+  }
   .button-con.red {
     background-color: #e04726;
+    color: white;
+  }
+    .button-con.red:hover {
+    background-color: #e04726b5;
     color: white;
   }
   .button-con.blue {
     background-color: #3B7CFF;
     color: white;
   }
+  .button-con.blue:hover {
+    background-color: #3b7cffb5;
+  }
+
+  }
   .button-con.grey {
     background-color: #aeaeae;
     color: white;
   }
+  .button-con.grey:hover {
+    background-color: #aeaeaeb5;
+    color: white;
+  }
   .button-con.yellow {
     background-color: #f9c122;
+    color: white;
+  }
+  .button-con.yellow:hover {
+    background-color: #f9c122b5;
     color: white;
   }
 
@@ -7030,7 +7058,7 @@ button.close {
 
   table.schedule td  {
       border: 1px solid #dddddd;
-      text-align: left;
+      text-align: center;
       padding: 8px;
       width: 25%;
   }
