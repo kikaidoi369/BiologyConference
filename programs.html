@@ -20,72 +20,68 @@
         <div class="container">
             <h3 class="head-page">PROGRAMS</h3>
             <center>
-                <table class="schedule">
-                    <tr>
-                        <th colspan="2">Sunday November 11<sup>th</sup></th>
-                    </tr>
-                    <tr>
-                        <td>12:00–18:00</td>
-                        <td>Registration</td>
-                    </tr>
-                    <tr>
-                        <td>12:00–18:00</td>
-                        <td>Registration</td>
-                    </tr>
-                    <tr>
-                        <th colspan="2">August</th>
-                    </tr>
-                    <tr>
-                        <td>1 August, 2017</td>
-                        <td>Decription</td>
-                    </tr>
-                    <tr>
-                        <td>1 August, 2017</td>
-                        <td>Decription</td>
-                    </tr>
-                    <tr>
-                        <td>1 August, 2017</td>
-                        <td>Decription</td>
-                    </tr>
-                    <tr>
-                        <td>1 August, 2017</td>
-                        <td>Decription</td>
-                    </tr>
-                    <tr>
-                        <td>1 August, 2017</td>
-                        <td>Decription</td>
-                    </tr>
-                </table>
+              <div id=table_test>
+              </div>
             </center>
-            <div id=table_test>
-            </div>
         </div>
-        <script>
-            var start_date  = new Date("2018-11-11");
-            var day_list    = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]; 
-            var month_list  = [
-                                "January", "February", "March",
-                                "April", "May", "June", "July",
-                                "August", "September", "October",
-                                "November", "December"
-                              ];
-            list_event = ["12:00-18:00","Registration"];
-            console.log(day_list[start_date.getDay()]+month_list[start_date.getMonth()]);
-            console.log(list_event);
+        <script >
+            list_date  = [
+                          "Sunday November 11th, 2018",
+                          "Monday November 12th, 2018",
+                          "Tuesday November 13th, 2018",
+                          "Wednesday November 14th, 2018",
+                          "Thursday November 15th, 2018"
+                         ]
+            list_event =  [
+                            [
+                              "12:00-18:00","Registration",
+                              "18:00-","test"
+                            ],
+                            [
+                              "12:00-18:00","Registration",
+                              "18:00-","test"
+                            ],
+                            [
+                              "12:00-18:00","Registration",
+                              "18:00-","test"
+                            ],
+                            [
+                              "12:00-18:00","Registration",
+                              "18:00-","test"
+                            ],
+                            [
+                              "12:00-18:00","Registration",
+                              "18:00-","test"
+                            ]
+                          ]
             var table    = document.createElement('table');
-            var tr  =   document.createElement('tr');
-            var td  =   document.createElement('td');
-            td.appendChild(document.createTextNode(list_event[0]));           tr.appendChild(td);
-            var td  =   document.createElement('td');
-            td.appendChild(document.createTextNode(list_event[1]));
-            tr.appendChild(td);
             var tbody = document.createElement('tbody');
-            tbody.appendChild(tr);
+            for (var i = 0; i < list_date.length; i++) {
+              var th  = document.createElement('th');
+              th.appendChild(document.createTextNode(list_date[i]));
+              th.colSpan  = 2;
+              tbody.appendChild(th);
+              var currentdate_events = list_event[i];
+              var tr  =   document.createElement('tr');
+              for (var j = 0; j < currentdate_events.length; j++) {
+                var td = document.createElement('td');
+                if (j%2!=0) {
+                  td.appendChild(document.createTextNode(currentdate_events[j]));
+                  tr.appendChild(td);
+                  tbody.appendChild(tr);
+                  var tr  =   document.createElement('tr');
+                }
+                else {
+                  td.appendChild(document.createTextNode(currentdate_events[j]));
+                  tr.appendChild(td);
+                }
+              }
+            }
             table.appendChild(tbody);
             table.classList.add('schedule')
             var div =   document.getElementById('table_test');
             div.appendChild(table)
         </script>
-        <footer id="footer"></footer> 
+        <footer id="footer"></footer>
 </body>
 </html>
