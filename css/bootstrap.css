@@ -1616,7 +1616,7 @@ pre code {
     .container-fluid{
         padding-right: 5%;
         padding-left: 5%;
-    } 
+    }
 }
 @media (min-width:992px){
     .container-fluid{
@@ -1628,7 +1628,7 @@ pre code {
     .container-fluid{
         padding-right: 18%;
         padding-left: 18%;
-    } 
+    }
 }
 
 .row {
@@ -7091,7 +7091,7 @@ button.close {
     display: inline-block;
     padding: 10px 15px;
     margin: 9px 0px;
-    border: 1px solid #ddd;  
+    border: 1px solid #ddd;
   }
 /*----- END TABLE -----*/
 

@@ -26,11 +26,11 @@
         </div>
         <script >
             list_date  = [
-                          "Sunday November 11th, 2018",
-                          "Monday November 12th, 2018",
-                          "Tuesday November 13th, 2018",
-                          "Wednesday November 14th, 2018",
-                          "Thursday November 15th, 2018"
+                          "Sunday November 11th",
+                          "Monday November 12th",
+                          "Tuesday November 13th",
+                          "Wednesday November 14th",
+                          "Thursday November 15th"
                          ]
             list_event =  [
                             [
@@ -60,7 +60,15 @@
               var th  = document.createElement('th');
               th.appendChild(document.createTextNode(list_date[i]));
               th.colSpan  = 2;
+              var tr  = document.createElement('tr');
+              var td = document.createElement('td');
+              td.appendChild(document.createTextNode("TIME"));
+              tr.appendChild(td);
+              var td = document.createElement('td');
+              td.appendChild(document.createTextNode("ACTIVITIES"));
+              tr.appendChild(td);
               tbody.appendChild(th);
+              tbody.appendChild(tr);
               var currentdate_events = list_event[i];
               var tr  =   document.createElement('tr');
               for (var j = 0; j < currentdate_events.length; j++) {
