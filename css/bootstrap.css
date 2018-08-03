@@ -6910,6 +6910,9 @@ button.close {
 .paragraph{
   margin:15px 40px;
 }
+.paragraph p{
+    margin-top: 20px;
+}
 .content-tab{
   margin: 40px 25px;
   border: 1px solid #e0e0e0;
@@ -6963,6 +6966,22 @@ button.close {
   margin-top: 0px;
 }
 
+.content-tab-other{
+  border-bottom: 0.5px solid #c3c0c0fa;
+  padding: 12px;
+  background-color:#a7a7a7;
+  color: white;
+  margin-top: 0px;
+  border-radius: 5px;
+}
+
+.content-tab-kmutt{
+  border-bottom: 0.5px solid #c3c0c0fa;
+  padding: 12px;
+  background-color:#de902f;
+  color: white;
+  margin-top: 0px;
+}
 .profile-frame{
   margin: 20px 5%;
   padding: 20px 30px;
@@ -7099,3 +7118,23 @@ button.close {
 
 
 /*----- END DASHBOARD -----*/
+        .left-menu-general{
+            margin: 0px 25px;
+            width: 170px;
+            padding: 0;
+            display: block;
+            box-shadow: 2px 4px #eeeeee;
+        }
+        .left-menu-general a{
+            display: block;
+            background-color: #dddddd;
+            padding: 5px 10px;
+            border-bottom: 1px solid #717171;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .left-menu-general a:hover{
+            background-color: #888;
+            color: black;
+        }
